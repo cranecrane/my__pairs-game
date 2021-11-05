@@ -1,0 +1,62 @@
+.card {
+    --card-border: 2px;
+    --card-border-tablet: 10px;
+    --card-border-radius: 6px;
+
+    border: var(--card-border) solid var(--whiskey);
+    border-radius: var(--card-border-radius);
+
+    font-family: 'Times New Roman', Times, serif;
+    color: transparent;
+
+    background-image: url(../../bg-cards.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    
+    transition-property: border-color, background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+
+    user-select: none;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+
+.card:hover,
+.card:focus-visible,
+.card:active {
+    border-color: var(--sanguine-brown);
+    
+    background-color: rgba(0, 0, 0, .2);
+    background-blend-mode: overlay;
+
+    transition-property: border-color, background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.card.open {
+    border: var(--card-border) solid var(--sanguine-brown);
+    border-radius: var(--card-border-radius);
+    
+
+    color: var(--text-color-inverse);
+    background-color: var(--parchment);
+    background-image: none;
+
+    transition-property: border-color, color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+
+    cursor: default;      
+}
+
+@media (min-width: 768px) {
+    .card.open {
+        border-style: double;
+        border-width: var(--card-border-tablet);
+    }
+}

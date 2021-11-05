@@ -1,0 +1,23 @@
+:root {
+    /*** colors ***/
+    --bucaneer: #643634;
+    --eastern-blue: #149da6;
+    --napa: #aca699;
+    --parchment: #f2ecd4;
+    --sanguine-brown: #8f3c36;
+    --whiskey: #d3af6a;
+    --white-rock: #e5dfc8;
+    --mandy: #e25252;
+
+    --text-color-main: var(--parchment);
+    --text-color-inverse: var(--bucaneer);
+
+    /*** sizes ***/
+    --max-width-container: 1340px;
+    --padding-lr-container: 15px;
+    --padding-lr-container-tablet: 50px;
+
+    --gutter: 20px;
+
+    --app-size-tablet: 680px;
+}

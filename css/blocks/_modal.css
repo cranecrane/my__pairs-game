@@ -1,0 +1,180 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: var(--gutter);
+
+    background-color: rgba(0, 0, 0, .3);
+    visibility: visible;
+    opacity: 1;
+
+    transition-property: visibility, opacity;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.modal.hidden {
+    visibility: hidden;
+    opacity: 0;
+
+    transition-property: visibility, opacity;
+    transition-duration: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.modal__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-radius: 10px;
+    padding: var(--gutter);
+    width: min(calc(100vw - var(--padding-lr-container) * 2), 400px);
+    min-height: 300px;
+
+    color: var(--text-color-inverse);
+    background-color: var(--parchment);
+}
+
+@media (min-width: 768px) {
+    .modal__item {
+        padding: calc(var(--gutter) * 3);
+        width: 500px;
+        min-height: 350px;
+    }
+}
+
+.modal__options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: calc(var(--gutter) * 3);
+}
+
+
+@media (min-width: 768px) {
+    .modal__input-label {
+        font-size: 26px;
+    }
+}
+
+.modal__input-label {
+    margin-right: var(--gutter);
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .modal__input-label {
+        font-size: 26px;
+    }
+}
+
+.modal__input-note {
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: none;
+}
+
+@media (min-width: 768px) {
+    .modal__input {
+        font-size: 16px;
+    }
+}
+
+.modal__input {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: calc(var(--gutter) / 2);
+    width: calc(var(--gutter) * 3);
+    height: calc(var(--gutter) * 3);
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--text-color-inverse);
+    text-align: center;
+
+    background-color: var(--white-rock);
+    transition: border-color .3s ease-in-out;
+}
+
+.modal__input:focus {
+    border-color: var(--eastern-blue);
+    transition: border-color .3s ease-in-out;
+}
+.modal__input:focus-visible {
+    border-color: var(--eastern-blue);
+    transition: border-color .3s ease-in-out;
+}
+
+.modal__input:active {
+    border-color: var(--eastern-blue);
+    transition: border-color .3s ease-in-out;
+}
+
+.modal__text {
+    margin-bottom: calc(var(--gutter) * 2);
+
+    color: var(--sanguine-brown);
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .8px;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .modal__text {
+        font-size: 40px;
+    }
+}
+
+.modal__btn {
+    align-self: center;
+    border-radius: 10px;
+    padding: var(--gutter) calc(var(--gutter) * 2);
+
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color-main);
+    text-transform: uppercase;
+    letter-spacing: .8px;
+
+    background-color: var(--eastern-blue);
+    transition: background-color .2s ease-in-out;
+}
+
+@media (min-width: 1280px) {
+    .modal__btn:hover {
+    background-color: var(--mandy);
+    transition: background-color .2s ease-in-out;
+    }
+}
+
+.modal__btn:focus {
+    background-color: var(--mandy);
+    transition: background-color .2s ease-in-out;
+}
+
+.modal__btn:focus-visible {
+    background-color: var(--mandy);
+    transition: background-color .2s ease-in-out;
+}
+
+.modal__btn:active {
+    background-color: var(--mandy);
+    transition: background-color .2s ease-in-out;
+}

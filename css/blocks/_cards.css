@@ -1,0 +1,63 @@
+.cards {
+    --gap: calc(var(--gutter) / 5); 
+    --card-size: calc( ( 100% - ( (var(--rows) - 1) * var(--gap) ) ) / var(--rows) );
+
+    display: grid;
+    grid-template-columns: repeat(var(--rows), var(--card-size));
+    grid-template-rows: repeat(var(--rows), var(--card-size));
+    gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+    .cards {
+        --gap: calc(var(--gutter) / 2);
+        gap: var(--gap);
+    }
+}
+
+.--rows-2 {
+    --rows: 2;
+    font-size: 106px;
+}
+
+.--rows-4 {
+    --rows: 4;
+    font-size: 56px;
+}
+
+.--rows-6 {
+    --rows: 6;
+    font-size: 32px;
+}
+
+.--rows-8 {
+    --rows: 8;
+    font-size: 24px;
+}
+
+.--rows-10 {
+    --rows: 10;
+    font-size: 18px;
+}
+
+@media (min-width: 768px) {
+    .--rows-2 {
+        --rows: 2;
+        font-size: 144px;
+    }
+    
+    .--rows-4 {
+        --rows: 4;
+        font-size: 96px;
+    }
+    
+    .--rows-6 {
+        --rows: 6;
+        font-size: 56px;
+    }
+    
+    .--rows-8 {
+        --rows: 8;
+        font-size: 32px;
+    }
+}

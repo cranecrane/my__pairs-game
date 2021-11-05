@@ -1,0 +1,117 @@
+@media (min-width: 1280px) {
+    .app {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        grid-template-rows: 1fr;
+        gap: 0 100px;
+        
+        width: 100%;
+        height: var(--app-size-tablet);
+    }
+}
+
+@media (min-width: 768px) {
+    .app__left-block {
+        margin-bottom: calc(var(--gutter) * 3);
+    }
+}
+
+@media (min-width: 1280px) {
+    .app__left-block {
+        margin-bottom: 0;
+    }
+}
+
+.app__title {
+    margin: 0;
+    margin-bottom: calc(var(--gutter) * 2);
+
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+@media (min-width: 768px) {
+    .app__title {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .app__title {
+        grid-column: unset;
+    }
+}
+
+.app__about {
+    margin-bottom: calc(var(--gutter) * 2);
+}
+
+.app__about-title {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .app__about-title {
+        font-size: 22px;
+    }
+}
+
+.app__about-descr {
+    max-width: 650px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.app__about-descr:not(:last-child) {
+    margin-bottom: var(--gutter);
+}
+
+@media (min-width: 768px) {
+    .app__about-descr {
+        font-size: 18px;
+    }
+}
+
+.app__controls {
+    display: flex;
+    margin-bottom: var(--gutter);
+}
+
+.app__controls-item:not(:last-child) {
+    margin-right: var(--gutter);
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .app__controls-item:not(:last-child) {
+        margin-right: calc(var(--gutter) * 2);
+    }
+}
+
+@media (min-width: 1280px) {
+    .app__controls {
+        display: block;
+    }
+
+    .app__controls-item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: var(--gutter);
+    }
+}
+
+.app__play-field {
+    width: 100%;
+    height: calc(100vw - (var(--padding-lr-container) * 2));
+}
+
+@media (min-width: 768px) {
+    .app__play-field {  
+        justify-self: end;
+        width: var(--app-size-tablet);
+        height: var(--app-size-tablet);
+    }
+}
