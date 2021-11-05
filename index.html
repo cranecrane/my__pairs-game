@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра "Найди пару"</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="body disable-scroll">
+    <div class="container">
+        <main class="app">
+            <div class="app__left-block">
+                <h1 class="app__title">Игра &#171;Найди пару&#187;</h1>
+                <div class="app__about">
+                    <h2 class="app__about-title">Цель игры:</h2>
+                    <p class="app__about-descr">Найти все пары одинаковых карт</p>
+                    <h2 class="app__about-title">Правила:</h2>
+                    <p class="app__about-descr">Каждый ход игрок открывает по две карты. Если они одинаковы, то остаются открытыми до конца партии. В противном случае они переворачиваются обратно. Игра закончена, когда найдены все пары карт.</p>
+                </div>
+                <div class="app__controls">
+                    <div class="app__controls-item control">
+                        <button type="button" id="timer" class="control__btn btn-reset" aria-label="Запустить таймер">
+                            <svg class="control__btn-icon control__btn-icon--timer" viewbox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12.5C19 17.7467 14.7467 22 9.5 22C4.25329 22 0 17.7467 0 12.5C0 7.25329 4.25329 3 9.5 3C14.7467 3 19 7.25329 19 12.5ZM2.98164 12.5C2.98164 16.1 5.90001 19.0184 9.5 19.0184C13.1 19.0184 16.0184 16.1 16.0184 12.5C16.0184 8.90001 13.1 5.98164 9.5 5.98164C5.90001 5.98164 2.98164 8.90001 2.98164 12.5Z" fill="currentColor"/>
+                                <path d="M8 1H10V4H8V1Z" fill="currentColor"/>
+                                <path d="M7 0.5C7 0.223858 7.22386 0 7.5 0H10.5C10.7761 0 11 0.223858 11 0.5C11 0.776142 10.7761 1 10.5 1H7.5C7.22386 1 7 0.776142 7 0.5Z" fill="currentColor"/>
+                                <path d="M14.0951 5.31486C13.8507 5.18624 13.7569 4.88388 13.8855 4.63952L14.741 3.01423C14.8696 2.76987 15.172 2.67605 15.4164 2.80467C15.6607 2.93329 15.7546 3.23565 15.6259 3.48001L14.7704 5.1053C14.6418 5.34966 14.3395 5.44348 14.0951 5.31486Z" fill="currentColor"/>
+                                <path d="M14.2213 2.4186C14.3427 2.17056 14.6422 2.06787 14.8902 2.18924L16.207 2.83352C16.455 2.95488 16.5577 3.25435 16.4363 3.50239C16.315 3.75043 16.0155 3.85312 15.7675 3.73176L14.4507 3.08747C14.2027 2.96611 14.1 2.66664 14.2213 2.4186Z" fill="currentColor"/>
+                                <path d="M9 12.5C9 12.2239 9.22386 12 9.5 12H11.5C11.7761 12 12 12.2239 12 12.5C12 12.7761 11.7761 13 11.5 13H9.5C9.22386 13 9 12.7761 9 12.5Z" fill="currentColor"/>
+                                <path d="M9.5 13C9.22386 13 9 12.7761 9 12.5V8.5C9 8.22386 9.22386 8 9.5 8C9.77614 8 10 8.22386 10 8.5V12.5C10 12.7761 9.77614 13 9.5 13Z" fill="currentColor"/>
+                            </svg>
+                            <span class="control__counter"></span>
+                        </button>
+                        <div class="control__label">Таймер</div>
+                    </div>
+                    <div class="app__controls-item control">
+                        <button type="button" class="control__btn new-game btn-reset" aria-label="Начать игру заново">
+                            <svg class="control__btn-icon" viewbox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.83518 2.56509L16.0055 10.169C16.3389 10.3615 16.3389 10.8426 16.0055 11.035L2.83518 18.6389C2.50185 18.8314 2.08518 18.5908 2.08518 18.2059L2.08518 2.9981C2.08518 2.6132 2.50184 2.37264 2.83518 2.56509Z" stroke="currentColor" stroke-width="3"/>
+                            </svg>
+                        </button>
+                        <div class="control__label">Новая игра</div>
+                    </div>
+                </div>
+            </div>
+            <div class="app__play-field cards"></div>
+        </main>
+        <div class="modal modal--start">
+            <form class="modal__item">
+                <div class="modal__options">
+                    <label for="rows" class="modal__input-label">
+                        Карт в ряду:
+                        <small class="modal__input-note">* четное число от 2 до 10</small>
+                    </label>
+                    <input class="modal__input" type="number" name="rows" id="rows" min="2" max="10" step="2" placeholder="4">
+                </div>
+                <button type="submit" class="modal__btn btn-reset start-game" aria-label="Начать игру">Начать игру</button>
+            </form>
+        </div>
+        <div class="modal modal--end hidden">
+            <div class="modal__item modal__item--start">
+                <p class="modal__text">Игра закончена</p>
+                <button type="button" class="modal__btn btn-reset restart-game" aria-label="Начать новую игру">Новая игра</button>
+            </div>
+        </div>
+    </div>
+    <script defer src="js/main.js"></script>
+</body>
+</html>
