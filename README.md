@@ -1,5 +1,5 @@
 # Игра "Найди пару"
-http://pairs.cranecrane.ru/
+> **Деплой:** http://pairs.cranecrane.ru/
 
 ## Цель задания
 
