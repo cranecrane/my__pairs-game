@@ -136,6 +136,7 @@
         restartBtn.addEventListener('click', function() {
             this.closest('.modal').classList.add('hidden');
             showStartWindow();
+            if (timerFlag) clearInterval(timerFlag);
         });
         newGameBtn.addEventListener('click', function() {
             showStartWindow();
